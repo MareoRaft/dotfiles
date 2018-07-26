@@ -1,13 +1,4 @@
 # Blacklist everything
 *
 
-# Whitelist only the files you want
-## repo management files
-!.gitignore
-!README.md
-
-## config files / dotfiles
-!.profile
-!.zprofile
-!.bash_profile
-
+# To 'whitelist' a file, simply git add -f filepath to have git start tracking it.  No need to list it here!
