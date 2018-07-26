@@ -1,0 +1,13 @@
+# Blacklist everything
+*
+
+# Whitelist only the files you want
+## repo management files
+!.gitignore
+!README.md
+
+## config files / dotfiles
+!.profile
+!.zprofile
+!.bash_profile
+
