@@ -8,7 +8,7 @@
 #          background    ?????     [  textred          textyellow      textmagenta       textblue         textregular     textblack]   ????    >
 #   PS1="\[\033[41m\]\[\033[30m\][\[\033[31m\]\u@\[\033[1;33m\]\h:\[\033[1;35m\]\W,\[\033[1;34m\] \@,\[\033[1;37m\]\d\[\033[30m\]]\[\033[0m\]>"
 #                                             \u is the User.  \h is the computer \W is directory \@ is the time   \d is the date
-PS1="\[\033[35m\]\W\[\033[0m\] \$ "
+PS1="\@ \[\033[35m\]\w\[\033[0m\] \$ "
 # all possible stuff:
 #PS1="hostnameh \h hostname \H basenametermdevice \l shell \s username \u cwd \w cwdbase \W hist \! cmdnum \# effectUIDind \$ oct \nnn END"
 

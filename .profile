@@ -59,4 +59,4 @@ alias sublime='open -a "Sublime Text"'
 # convenient ssh for x11:
 alias ssh-X='ssh -X -C -c blowfish'
 alias zprofile='source ~/.zprofile'
-
+alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
