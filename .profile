@@ -1,14 +1,21 @@
 
 # set the LANG to follow UTF-8
-LANG=en_US.UTF-8; export LANG
+export LANG=en_US.UTF-8
 
 # convenient IP addresses for servers
 BLACKBERRY=67.205.183.87 # login as freebsd
 FUJI=159.89.229.227 # login as freebsd
 DREAMHOST=matthewlancellotti.com # login as dh_fk2i75
 
+# optional freebsd tips
+if [ -x /usr/bin/fortune ] ; then /usr/bin/fortune freebsd-tips ; fi
+
 # make sure ssh agent is running (not tested)
 eval "$(ssh-agent -s)"
+
+# set some environment variables
+export EDITOR="vim"
+export PAGER="more"
 
 # let's add some places to PATH:
 # it makes sense for locals to come first, except that MacTeX requested to come before /opt.
@@ -29,7 +36,7 @@ export PATH=$PATH:~/npm-global/bin
 # Python virtualenvwrapper (see https://virtualenvwrapper.readthedocs.io/en/latest/)
 # source /usr/local/bin/virtualenvwrapper.sh # stopped working, probably from reinstalling python or something
 export WORKON_HOME="$HOME/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+. /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # Perl Path
 #way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
@@ -46,17 +53,14 @@ export MIZFILES=/usr/local/share/mizar
 # aliases, for convenience
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
 alias dunnet='emacs -batch -l dunnet'
-# alias go='. /Users/Matthew/DesktopFolders/programming/terminal/go' #the . means that the process is run IN THE CURRENT SHELL (. is source)
 alias my.test='py.test -x -s -vv'
 alias kw.test='cd ~/programming/knewwaves/python/test && ./pytest-ordered.sh'
 alias poda='perl /Users/Matthew/Dropbox/mm/poda.pl'
-
 alias pwd='\pwd | sed -E s#/+#/#g'
 alias r='rice'
 alias isage='sage -ipython'
 alias stroke='/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources/stroke'
 alias sublime='open -a "Sublime Text"'
-# convenient ssh for x11:
-alias ssh-X='ssh -X -C -c blowfish'
+alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
 alias zprofile='source ~/.zprofile'
 alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
