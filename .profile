@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # set the LANG to follow UTF-8
 export LANG=en_US.UTF-8
@@ -8,7 +9,9 @@ FUJI=159.89.229.227 # login as freebsd
 DREAMHOST=matthewlancellotti.com # login as dh_fk2i75
 
 # optional freebsd tips
-if [ -x /usr/bin/fortune ] ; then /usr/bin/fortune freebsd-tips ; fi
+if [ -x /usr/bin/fortune ]; then
+	/usr/bin/fortune freebsd-tips
+fi
 
 # make sure ssh agent is running (not tested)
 eval "$(ssh-agent -s)"
@@ -32,11 +35,6 @@ export PATH=$PATH:/opt/X11/bin
 export PATH=$PATH:~/npm-global
 export PATH=$PATH:~/node_modules
 export PATH=$PATH:~/npm-global/bin
-
-# Python virtualenvwrapper (see https://virtualenvwrapper.readthedocs.io/en/latest/)
-# source /usr/local/bin/virtualenvwrapper.sh # stopped working, probably from reinstalling python or something
-export WORKON_HOME="$HOME/.virtualenvs"
-. /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # Perl Path
 #way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
@@ -64,3 +62,9 @@ alias sublime='open -a "Sublime Text"'
 alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
 alias zprofile='source ~/.zprofile'
 alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
+
+# Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
+if [ -f "${HOME}/.profile_local" ]; then
+	. "${HOME}/.profile_local"
+fi
+
