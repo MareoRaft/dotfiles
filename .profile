@@ -18,7 +18,6 @@ eval "$(ssh-agent -s)"
 
 # set some environment variables
 export EDITOR="vim"
-export PAGER="more"
 
 # let's add some places to PATH:
 # it makes sense for locals to come first, except that MacTeX requested to come before /opt.
@@ -60,7 +59,6 @@ alias isage='sage -ipython'
 alias stroke='/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources/stroke'
 alias sublime='open -a "Sublime Text"'
 alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
-alias zprofile='source ~/.zprofile'
 alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
