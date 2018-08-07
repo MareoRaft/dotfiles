@@ -1,13 +1,3 @@
-
-### This interferes w/ tmux restore working direction, so i'm no longer user.  Besides.  with tmux, i no longer need this.
-## open new terminal window in same dir: see http://superuser.com/questions/232835/open-a-new-tab-in-the-same-directory
-## 1. emulate bash PROMPT_COMMAND (only for zsh)
-#precmd() { eval "$PROMPT_COMMAND" }
-## 2. do the opening
-#PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
-#[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
-
-
 #colorize the Terminal
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1;
