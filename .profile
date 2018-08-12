@@ -31,9 +31,9 @@ export PATH=$PATH:/opt/local/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/opt/X11/bin
-export PATH=$PATH:~/npm-global
 export PATH=$PATH:~/node_modules
 export PATH=$PATH:~/npm-global/bin
+export PATH=$PATH:~/.npm-global/bin
 
 # Perl Path
 #way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
