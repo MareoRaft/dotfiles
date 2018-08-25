@@ -18,6 +18,8 @@ eval "$(ssh-agent -s)"
 
 # set some environment variables
 export EDITOR="vim"
+# remember your docker id for use with docker
+export DOCKERID="mvlancellotti"
 
 # let's add some places to PATH:
 # it makes sense for locals to come first, except that MacTeX requested to come before /opt.
@@ -60,6 +62,7 @@ alias stroke='/System/Library/CoreServices/Applications/Network\ Utility.app/Con
 alias sublime='open -a "Sublime Text"'
 alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
 alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
+alias elf='electron-forge'
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
 if [ -f "${HOME}/.profile_local" ]; then
