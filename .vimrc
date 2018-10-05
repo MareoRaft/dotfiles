@@ -8,6 +8,8 @@ set smartcase "this UNIGNORES case when at least one letter in search phrase it 
 
 set scrolloff=2 "this guarantees 2 lines buffer from the edge of the window (unless you are at the very beg. or end of file)
 
+set tabstop=4 "this sets the visual width of a tab to 4 * the visual width of a space
+
 syntax on "make sure syntax highlighting is on
 
 filetype on "enables filetype detection
