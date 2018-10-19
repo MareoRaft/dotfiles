@@ -1,0 +1,39 @@
+#go(): given dir and depth, run find. if nonempty, take the first entry, cd, pwd, exit
+find_go() { #echo $'\n\n''1:'$1; echo '2:'$2; echo '3:'$3
+    DEPTH=$1
+    SPATH="$2";  #echo 'spath:'"$SPATH"
+    #DIR="$3"; #echo 'dir:'"$DIR"
+    DIR="$3"; shift
+    until [ -z "$3" ] #concatenate args with a space
+    do
+        DIR="$DIR $3"; shift
+    done
+    #echo 'DIR: '"$DIR"
+    FINDS=$(find "$SPATH" -maxdepth $DEPTH -name "$DIR" 2>/dev/null)
+    #echo 'finds is '"$FINDS"
+    IFS=$'\n' # interpolation necessary b/c singles will make \ and n field separators.
+    for FIND in $FINDS # although this is a loop, the goal is to take the first entry if there is one
+    do
+        # cd to first entry, pwd, exit
+        #echo 'FIND is '$FIND;
+        cd "$FIND"
+        pwd
+        IFS=$' \t\n'
+        return 0
+    done
+    IFS=$' \t\n'
+    return 1
+}
+
+############################### MAIN ###############################
+    #state the desired spaths
+    GOPATHS="$HOME"$'\n'"$HOME/Dropbox"$'\n'"/"
+
+go() {
+    #foreach spath/depth pair, run go
+    for GOPATH in $GOPATHS
+    do
+        #echo 'gopath is '"$GOPATH"
+        find_go 4 "$GOPATH" $@ && return
+    done
+}
