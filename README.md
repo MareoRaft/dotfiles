@@ -24,5 +24,6 @@ Pros:
 
 Cons:
 
-  * It is harder to see which of your config files are part of the repo and which ones are not.
+  * It is harder to see which of your config/nonconfig files are part of the repo and which ones are not.
+  * You must explicitly `git add -f <filename>` new files into the project.
   * You have the classic "git repo within git repo" problem.  If you are anywhere within your folder that's not within another git repo, and you run a git command, that command will apply to THIS repo.  Do NOT type a git command without knowing what you are doing, as you could potentially wipe out your entire home folder.
