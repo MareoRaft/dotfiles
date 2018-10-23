@@ -1,3 +1,8 @@
+# Make sure bashrc runs (I think this is needed on RHEL, but not other OS's)
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
 #  \[\033[           x;             y                     m                      \]
 #     ESC       SGR parameters                      end an SGR code
 

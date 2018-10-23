@@ -36,6 +36,8 @@ export PATH=$PATH:/opt/X11/bin
 export PATH=$PATH:~/node_modules
 export PATH=$PATH:~/npm-global/bin
 export PATH=$PATH:~/.npm-global/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/bin
 
 # Perl Path
 #way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
@@ -45,6 +47,9 @@ export PERL5LIB=/usr/local/Library/Perl/5.16/Matt"${PERL5LIB:+:$PERL5LIB}"
 export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Downloads"${PERL5LIB:+:$PERL5LIB}"
 export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Custom"${PERL5LIB:+:$PERL5LIB}"
 export PERL5LIB=."${PERL5LIB:+:$PERL5LIB}" #this puts the current directory ON TOP
+
+# Java Home Path
+export JAVA_HOME="/usr"
 
 # Mizar Path
 export MIZFILES=/usr/local/share/mizar
