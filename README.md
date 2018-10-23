@@ -8,7 +8,6 @@ I am using a gitignore WHITELIST, so it *should* be safe for this repo to sit he
 
 The end goal of this project is to make it so that whenever I am on a new box, I can just clone this repository and be ready to go with personal settings.
 
-## config directory
+## current usage
 
-All configuration files (aka "dotfiles") are located here.  This is the *content* that you wish to sync across computers.
-
+clone repo.  Checkout the `DOTFILES-git` branch.  Read that readme and go from there.
