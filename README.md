@@ -12,7 +12,7 @@ The end goal of this project is to make it so that whenever I am on a new box, I
 
 This branch makes my home folder itself the git repository.  So `.git` is located in my home folder.  I am using a gitignore WHITELIST, so only files explicitly checked into the repo are synced.
 
-To install: Clone repo, then run `./install.py` inside of it.  Then go to your home folder and use `git reset` or `git checkout -- <filename>` as necessary until your home folder dotfiles are synced with the repo.
+To install: Clone repo, then run `./install.py` inside of it.  Then go to your home folder and use git as wanted.  (You may decide to `git checkout -- .` to set all dotfiles to the repo's current state.  THIS WILL OVERWRITE YOUR DOTFILES.)
 
 To uninstall: Remove the `.git` folder from your home folder.
 
@@ -26,4 +26,4 @@ Cons:
 
   * It is harder to see which of your config/nonconfig files are part of the repo and which ones are not.
   * You must explicitly `git add -f <filename>` new files into the project.
-  * You have the classic "git repo within git repo" problem.  If you are anywhere within your folder that's not within another git repo, and you run a git command, that command will apply to THIS repo.  Do NOT type a git command without knowing what you are doing, as you could potentially wipe out your entire home folder.
+  * You have the classic "git repo within git repo" problem.  If you are anywhere within your folder that's not within another git repo, and you run a git command, that command will apply to THIS repo.  Do NOT type a git command without knowing what you are doing, as you could potentially wipe out your entire home folder.  For example, never use GIT-CLEAN.
