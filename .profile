@@ -64,7 +64,7 @@ alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
 alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
 alias elf='electron-forge'
 alias gnch='ganache-cli'
-alias ganache-app='open -a "Ganache.app"'
+alias ganache-app='open -a "Ganache"'
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
 if [ -f "${HOME}/.profile_local" ]; then
