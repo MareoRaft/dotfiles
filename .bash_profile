@@ -22,6 +22,12 @@ PS1="\@ \[\033[35m\]\w\[\033[0m\] \$ "
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1;
 
+# run ~/.bash_profile_local for local settings
+BASH_PROFILE_LOCAL_PATH="${HOME}/.bash_profile_local"
+if [ -f "${BASH_PROFILE_LOCAL_PATH}" ]; then
+	. "${BASH_PROFILE_LOCAL_PATH}"
+fi
+
 # run ~/.profile too, in sh-mode for increased compatability
 source ~/.profile
 
