@@ -5,16 +5,16 @@ export CLICOLOR=1;
 autoload -U colors && colors
 PS1="%{$fg[magenta]%}%~ %{$reset_color%}%% "
 
+# try to enable 'go' program
+source ~/bin/go.zsh
 
-# run ~/.profile too, in sh-mode for increased compatability
+# if computer has it's own specific zprofile, run that now
+if [ -f "${HOME}/.zprofile_local" ]; then
+	. "${HOME}/.zprofile_local"
+fi
+
+# run ~/.profile too, in sh-mode for increased compatibility
 emulate sh
 source ~/.profile
 emulate zsh
-
-source ~/bin/go.zsh
-
-
-# Setting PATH for Python 2.7
-# The original version is saved in .zprofile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 

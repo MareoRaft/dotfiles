@@ -39,7 +39,7 @@ export PATH=$PATH:~/.npm-global/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/bin
 
-# Perl Path
+# Perl path
 #way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
 export PERL5LIB=/usr/local/Library/Perl/5.16/Mo
 export PERL5LIB=/usr/local/Library/Perl/5.16/Downloads"${PERL5LIB:+:$PERL5LIB}"
@@ -48,8 +48,9 @@ export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Downloads"${PERL5LIB
 export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Custom"${PERL5LIB:+:$PERL5LIB}"
 export PERL5LIB=."${PERL5LIB:+:$PERL5LIB}" #this puts the current directory ON TOP
 
-# Java Home Path
-export JAVA_HOME="/usr"
+# TODO: this command should be local
+# set PATH for Python 2.7
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # Mizar Path
 export MIZFILES=/usr/local/share/mizar
@@ -70,6 +71,7 @@ alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
 alias elf='electron-forge'
 alias gnch='ganache-cli'
 alias ganache-app='open -a "Ganache"'
+alias jenkins='java -jar ~/HUBCITYMEDIA/jenkins-cli.jar -s http://10.0.51.117:3000/'
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
 if [ -f "${HOME}/.profile_local" ]; then
