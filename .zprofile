@@ -5,6 +5,10 @@ export CLICOLOR=1;
 autoload -U colors && colors
 PS1="%{$fg[magenta]%}%~ %{$reset_color%}%% "
 
+# enable reverse search
+bindkey -v
+bindkey "^R" history-incremental-search-backward
+
 # try to enable 'go' program
 source ~/bin/go.zsh
 
