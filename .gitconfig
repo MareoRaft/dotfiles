@@ -1,0 +1,13 @@
+[push]
+	default = simple
+# Force SSH to be used instead of HTTPS
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
+# import the computer's local global gitconfig file, which can override settings for the particular computer
+[include]
+  path = ~/.gitconfig_local
+
