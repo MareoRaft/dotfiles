@@ -1,5 +1,5 @@
 [push]
-	default = simple
+  default = simple
 # Force SSH to be used instead of HTTPS
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/

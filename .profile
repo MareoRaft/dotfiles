@@ -71,7 +71,7 @@ alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
 alias elf='electron-forge'
 alias gnch='ganache-cli'
 alias ganache-app='open -a "Ganache"'
-alias jenkins='java -jar ~/HUBCITYMEDIA/jenkins-cli.jar -s http://10.0.51.117:3000/'
+alias jenkins='java -jar ~/HUBCITYMEDIA-repo/jenkins-cli.jar -s http://10.0.51.117:3000/'
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
 if [ -f "${HOME}/.profile_local" ]; then
