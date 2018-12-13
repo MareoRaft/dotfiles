@@ -1,0 +1,20 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+fe80::1%lo0     localhost
+
+67.205.183.87	blackberry
+159.89.229.227	fuji
+
+10.0.51.183		sandbox
+10.0.51.62		playpen
+10.0.51.106		jungle
+10.0.51.117		jenkins
+
+
