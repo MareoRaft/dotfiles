@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# set the LANG to follow UTF-8
-export LANG=en_US.UTF-8
-
 # convenient IP addresses for servers
 BLACKBERRY=67.205.183.87 # login as freebsd
 FUJI=159.89.229.227 # login as freebsd
@@ -16,46 +13,64 @@ fi
 # make sure ssh agent is running (not tested)
 eval "$(ssh-agent -s)"
 
-# set some environment variables
+
+
+# ENVIRONMENT VARIABLES
+
+# default editor
 export EDITOR="vim"
+
+# set the LANG to follow UTF-8
+export LANG=en_US.UTF-8
+
 # remember your docker id for use with docker
 export DOCKERID="mvlancellotti"
 
+
+
+# PATHS
+
 # let's add some places to PATH:
 # it makes sense for locals to come first, except that MacTeX requested to come before /opt.
-export PATH=/usr/texbin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/opt/local/bin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/bin
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/opt/local/sbin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/opt/X11/bin
-export PATH=$PATH:~/node_modules
-export PATH=$PATH:~/npm-global/bin
-export PATH=$PATH:~/.npm-global/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/bin
+PATH=/usr/texbin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/opt/local/bin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/opt/local/sbin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/sbin
+PATH=$PATH:/opt/X11/bin
+PATH=$PATH:~/node_modules
+PATH=$PATH:~/npm-global/bin
+PATH=$PATH:~/.npm-global/bin
+PATH=$PATH:~/.local/bin
+PATH=$PATH:~/bin
+export PATH
 
 # Perl path
-#way to append for many things: (i chose to NOT append the first one to flush PERL5LIB)
-export PERL5LIB=/usr/local/Library/Perl/5.16/Mo
-export PERL5LIB=/usr/local/Library/Perl/5.16/Downloads"${PERL5LIB:+:$PERL5LIB}"
-export PERL5LIB=/usr/local/Library/Perl/5.16/Matt"${PERL5LIB:+:$PERL5LIB}"
-export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Downloads"${PERL5LIB:+:$PERL5LIB}"
-export PERL5LIB=/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Custom"${PERL5LIB:+:$PERL5LIB}"
-export PERL5LIB=."${PERL5LIB:+:$PERL5LIB}" #this puts the current directory ON TOP
+# (i chose to NOT append the first one to flush PERL5LIB)
+PERL5LIB=.
+PERL5LIB=$PERL5LIB:/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Custom
+PERL5LIB=$PERL5LIB:/Users/Matthew/Dropbox/mm/Library/Perl/5.16/Downloads
+PERL5LIB=$PERL5LIB:/usr/local/Library/Perl/5.16/Matt
+PERL5LIB=$PERL5LIB:/usr/local/Library/Perl/5.16/Downloads
+PERL5LIB=$PERL5LIB:/usr/local/Library/Perl/5.16/Mo
+export PERL5LIB
 
-# TODO: this command should be local
-# set PATH for Python 2.7
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# Python path
+# put it in .profile_local
 
-# Mizar Path
+# Mizar path
 export MIZFILES=/usr/local/share/mizar
 
-# aliases, for convenience
+# Java path
+# put it in .profile_local
+
+
+
+# ALIASES
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
 alias dunnet='emacs -batch -l dunnet'
 alias my.test='py.test -x -s -vv'
@@ -73,8 +88,9 @@ alias gnch='ganache-cli'
 alias ganache-app='open -a "Ganache"'
 alias jenkins='java -jar ~/HUBCITYMEDIA-repo/jenkins-cli.jar -s http://10.0.51.117:3000/'
 
+
+
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
 if [ -f "${HOME}/.profile_local" ]; then
 	. "${HOME}/.profile_local"
 fi
-
