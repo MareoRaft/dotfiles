@@ -10,7 +10,7 @@ if [ -x /usr/bin/fortune ]; then
 	/usr/bin/fortune freebsd-tips
 fi
 
-# make sure ssh agent is running (not tested)
+# make sure ssh agent is running
 eval "$(ssh-agent -s)"
 
 

@@ -1,3 +1,8 @@
+# run ~/.profile, which for us is common across shells
+emulate sh
+source ~/.profile
+emulate zsh
+
 #colorize the Terminal
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1;
@@ -22,9 +27,4 @@ source ~/bin/go.zsh
 if [ -f "${HOME}/.zprofile_local" ]; then
 	. "${HOME}/.zprofile_local"
 fi
-
-# run ~/.profile too, in sh-mode for increased compatibility
-emulate sh
-source ~/.profile
-emulate zsh
 
