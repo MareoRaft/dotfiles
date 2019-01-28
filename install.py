@@ -27,7 +27,7 @@ def install_safe():
 		response = input('The detected location of the dotfiles repo is {}.  Is this correct?  If you type "y" and hit RETURN, that folder will be DELETED, so please make sure it is correct.'.format(PATH['repo']))
 		if response == 'y':
 			install()
-			print('Installation complete.  Go to your home directory.')
+			print('Installation complete.  Go to your home directory and use git to sync.')
 		else:
 			print('You did not enter "y".  Aborting.')
 

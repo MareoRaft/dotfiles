@@ -1,3 +1,7 @@
+# note to ME
+# PLEASE read https://askubuntu.com/questions/463462/sequence-of-scripts-sourced-upon-login CAREFULLY
+# using bashrc may not make sense.  it's possible that NVM was mistaken to put it here
+
 # run ~/.rc, the common rc for different shells
 RC_PATH="${HOME}/.rc"
 if [ -f "${RC_PATH}" ]; then
