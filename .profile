@@ -68,6 +68,9 @@ export MIZFILES=/usr/local/share/mizar
 # Java path
 # put it in .profile_local
 
+# Gem (for Ruby) path
+# put it in .profile_local
+
 # Node Version Manager path
 export NVM_DIR="$HOME/.nvm"
 
