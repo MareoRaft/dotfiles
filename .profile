@@ -68,7 +68,14 @@ export MIZFILES=/usr/local/share/mizar
 # Java path
 # put it in .profile_local
 
+# Gem (for Ruby) path
+# put it in .profile_local
 
+# Node Version Manager path
+export NVM_DIR="$HOME/.nvm"
+
+# load nvm itself
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # ALIASES
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
