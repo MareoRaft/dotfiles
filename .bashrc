@@ -8,6 +8,12 @@ if [ -f "${RC_PATH}" ]; then
     . "${RC_PATH}"
 fi
 
+# if computer has a user-wide /etc/bashrc, run that now
+BASH_RC_ETC_PATH="/etc/bashrc"
+if [ -f "${BASH_RC_ETC_PATH}" ]; then
+    . "${BASH_RC_ETC_PATH}"
+fi
+
 # common bashrc things shared across computers
 
 # load nvm bash completion
@@ -19,5 +25,4 @@ BASH_RC_LOCAL_PATH="${HOME}/.bashrc_local"
 if [ -f "${BASH_RC_LOCAL_PATH}" ]; then
     . "${BASH_RC_LOCAL_PATH}"
 fi
-
 
