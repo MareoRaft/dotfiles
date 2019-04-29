@@ -20,8 +20,11 @@ eval "$(ssh-agent -s)"
 # default editor
 export EDITOR="vim"
 
-# set the LANG to follow UTF-8
-export LANG=en_US.UTF-8
+# set the LANG to follow UTF-8, and other locale settings
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 # remember your docker id for use with docker
 export DOCKERID="mvlancellotti"
