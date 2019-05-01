@@ -33,7 +33,7 @@ def install_hosts():
 	# write hosts
 	# note that the python_hosts library is extensive and could be used to write in a smarter way, but use add-host.sh for now
 	for host_entry in hosts.entries:
-		if host_entry.entry_type in ['comment', 'blank']:
+		if not host_entry.is_real_entry():
 			pass
 		elif len(host_entry.names) > 1:
 			print('Multiple host names not implemented.  (for {}.)  skipping.'.format(host_entry.names))
