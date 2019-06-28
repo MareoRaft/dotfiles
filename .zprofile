@@ -20,8 +20,10 @@ bindkey "^A" vi-beginning-of-line
 # enable jump to end of line
 bindkey "^E" vi-end-of-line
 
-# try to enable 'go' program
+# enable 'go' program
 source ~/bin/go.zsh
+# enable 'switch' program
+source ~/bin/switch.zsh
 
 # if computer has it's own specific zprofile, run that now
 if [ -f "${HOME}/.zprofile_local" ]; then
