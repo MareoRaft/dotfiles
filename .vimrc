@@ -1,8 +1,6 @@
 "au BufRead,BufNewFile * start "this makes INSERT mode enabled when vim opens
 
 set number "this shows line numbers on left
-set relativenumber "this shows relative line numbers
-"together, these show relative line numbers everywhere except the current line, where it shows the absolute line number
 
 set ignorecase "this ignores case when searching
 set smartcase "this UNIGNORES case when at least one letter in search phrase is capitalized
