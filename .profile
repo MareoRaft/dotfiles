@@ -29,6 +29,9 @@ export LC_CTYPE="en_US.UTF-8"
 # remember your docker id for use with docker
 export DOCKERID="mvlancellotti"
 
+# things for BNY
+## for IRIS dev environment
+export REACT_APP_ENV=TEST
 
 
 # PATHS
