@@ -12,7 +12,11 @@ The end goal of this project is to make it so that whenever I am on a new box, I
 
 This branch makes my home folder itself the git repository.  So `.git` is located in my home folder.  I am using a gitignore WHITELIST, so only files explicitly checked into the repo are synced.
 
-To install: Clone repo, then run `./install.py` inside of it.  Then go to your home folder and use git as wanted.  (You may decide to `git checkout -- .` to set all dotfiles to the repo's current state.  THIS WILL OVERWRITE YOUR DOTFILES.)
+### To install:
+
+  1. Clone repo
+  2. Run `./install.py` (wherever that file may be inside the repo)
+  3. Go to your home folder and use git as wanted.  (You may decide to `git checkout .gitignore` and then `git checkout -- .` to set all dotfiles to the repo's current state.  THIS WILL OVERWRITE YOUR DOTFILES.)
 
 To uninstall: Remove the `.git` folder from your home folder.
 
