@@ -17,7 +17,7 @@ export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1;
 
 autoload -U colors && colors
-PS1="%{$fg[magenta]%}%~ %{$reset_color%}%% "
+PS1="%t %{$fg[magenta]%}%~ %{$reset_color%}%% "
 
 # use the vim keymap
 bindkey -v
