@@ -1,6 +1,6 @@
 # mareoraft's dotfiles
 
-n*x config files and dotfiles that I store in my home directory
+[*nix](https://en.wikipedia.org/wiki/Unix-like) config files and dotfiles that I store in my home directory
 
 NOTE: There are other dotfiles frameworks such as https://github.com/wking/dotfiles-framework.  It would be good to learn from them and possibly use one.
 
