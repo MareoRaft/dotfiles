@@ -83,6 +83,21 @@ export NVM_DIR="$HOME/.nvm"
 # load nvm itself
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# Set the ORACLE_BASE
+# export ORACLE_BASE=/path/to/oracle/base
+
+# Set the ORACLE_HOME.  Modify this depending on which DB you want to access.
+# export ORACLE_HOME=${ORACLE_BASE}/path/to/oracle/home
+
+# Add the ORACLE_HOME binaries to the PATH
+# export PATH=$PATH:${ORACLE_HOME}/bin
+
+# Define an oracle function to see which oracle instances are running
+list-oracle-instances() {
+    /bin/ps -ef | grep ora_lgw[r] | awk '{print $8}' | sed -e 's/ora_lg[w]r_//'
+}
+
+
 # ALIASES
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
 alias dunnet='emacs -batch -l dunnet'
