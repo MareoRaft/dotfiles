@@ -83,14 +83,8 @@ export NVM_DIR="$HOME/.nvm"
 # load nvm itself
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Set the ORACLE_BASE
-# export ORACLE_BASE=/path/to/oracle/base
-
-# Set the ORACLE_HOME.  Modify this depending on which DB you want to access.
-# export ORACLE_HOME=${ORACLE_BASE}/path/to/oracle/home
-
-# Add the ORACLE_HOME binaries to the PATH
-# export PATH=$PATH:${ORACLE_HOME}/bin
+# Set the ORACLE_BASE, ORACLE_HOME, and add Oracle binaries to the PATH
+# put it in .profile_local
 
 # Define an oracle function to see which oracle instances are running
 list-oracle-instances() {
