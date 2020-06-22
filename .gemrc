@@ -1,3 +1,5 @@
-install: --no-document
+install: --no-document -n /usr/local/bin
 update: --no-document
+:gemdir:
+  - ~/.gem/ruby
 

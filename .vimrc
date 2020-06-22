@@ -3,7 +3,7 @@
 set number "this shows line numbers on left
 
 set ignorecase "this ignores case when searching
-set smartcase "this UNIGNORES case when at least one letter in search phrase it capitalized
+set smartcase "this UNIGNORES case when at least one letter in search phrase is capitalized
 "together, case is only ignored when all of search phrase is lowercase
 
 set scrolloff=2 "this guarantees 2 lines buffer from the edge of the window (unless you are at the very beg. or end of file)

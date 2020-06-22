@@ -29,6 +29,9 @@ export LC_CTYPE="en_US.UTF-8"
 # remember your docker id for use with docker
 export DOCKERID="mvlancellotti"
 
+# things for BNY
+## for IRIS dev environment
+export REACT_APP_ENV=TEST
 
 
 # PATHS
@@ -80,6 +83,15 @@ export NVM_DIR="$HOME/.nvm"
 # load nvm itself
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# Set the ORACLE_BASE, ORACLE_HOME, and add Oracle binaries to the PATH
+# put it in .profile_local
+
+# Define an oracle function to see which oracle instances are running
+list-oracle-instances() {
+    /bin/ps -ef | grep ora_lgw[r] | awk '{print $8}' | sed -e 's/ora_lg[w]r_//'
+}
+
+
 # ALIASES
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
 alias dunnet='emacs -batch -l dunnet'
@@ -87,7 +99,7 @@ alias my.test='py.test -x -s -vv'
 alias kw.test='cd ~/programming/knewwaves/python/test && ./pytest-ordered.sh'
 alias poda='perl /Users/Matthew/Dropbox/mm/poda.pl'
 alias pwd='\pwd | sed -E s#/+#/#g'
-alias r='rice'
+alias r='radian'
 alias isage='sage -ipython'
 alias stroke='/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources/stroke'
 alias sublimetext='subl'
@@ -98,7 +110,8 @@ alias elf='electron-forge'
 alias gnch='ganache-cli'
 alias ganache-app='open -a "Ganache"'
 alias jenkins='java -jar ~/HUBCITYMEDIA-repo/jenkins-cli.jar -s http://10.0.51.117:3000/'
-
+alias engine='/Users/adc2btx/bin/cli-darwin-amd64-18.8.3.bin'
+alias sms='/Users/adc2btx/bin/discovery-sms-cli-macos-amd64-1.0.2.bin'
 
 
 # Finally, if the server has it's own server-specific profile, run that now.  This should be the LAST thing in the script.
