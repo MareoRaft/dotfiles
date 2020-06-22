@@ -1,12 +1,16 @@
-# This file contains the main installation functions, with no/minimal user interaction.
+""" This file contains the main installation functions, with no/minimal user interaction. """
+
+# builtin imports
 import os
 from os import path
 import sys
 import shutil
 import argparse
+import importlib
 
-from python_hosts import Hosts
+# third-party imports
 
+# local imports
 import utils
 
 # establish some paths
@@ -26,6 +30,8 @@ def install_repo():
 	shutil.rmtree(PATH['repo'])
 
 def install_hosts():
+	# this is a last-minute import because it might not be installed, and we only need it if we are using this function
+	from python_hosts import Hosts
 	# update /etc/hosts with your custom hosts
 	path_hosts = path.join(PATH['repo'], 'hosts')
 	# read hosts
