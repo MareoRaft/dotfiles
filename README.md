@@ -1,6 +1,6 @@
 # mareoraft's dotfiles
 
-n*x config files and dotfiles that I store in my home directory
+[*nix](https://en.wikipedia.org/wiki/Unix-like) config files and dotfiles that I store in my home directory
 
 NOTE: There are other dotfiles frameworks such as https://github.com/wking/dotfiles-framework.  It would be good to learn from them and possibly use one.
 
@@ -15,8 +15,10 @@ This branch makes my home folder itself the git repository.  So `.git` is locate
 ### To install:
 
   1. Clone repo
-  2. Run `./install.py` (wherever that file may be inside the repo)
-  3. Go to your home folder and use git as wanted.  (You may decide to `git checkout .gitignore` and then `git checkout -- .` to set all dotfiles to the repo's current state.  THIS WILL OVERWRITE YOUR DOTFILES.)
+  2. You can SKIP the next two if you want and just do `mv dotfiles/.git .` instead, IF you know what you are doing.
+  2. Install python dependencies with `pip install -r requirements.txt` since the version of the deps is important.
+  3. Run `./install.py` (wherever that file may be inside the repo)
+  4. Go to your home folder and use git as wanted.  (You may decide to `git checkout .gitignore` and then `git checkout -- .` to set all dotfiles to the repo's current state.  THIS WILL OVERWRITE YOUR DOTFILES.)
 
 To uninstall: Remove the `.git` folder from your home folder.
 
