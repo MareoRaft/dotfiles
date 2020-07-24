@@ -2,11 +2,11 @@
 
 
 
-# Set the ORACLE_BASE
+# Set the ORACLE_BASE (see https://www.orafaq.com/wiki/ORACLE_BASE)
 export ORACLE_BASE=/u01/app/oracle
 
 # Set the ORACLE_HOME.  Modify this depending on which DB you want to access.
-export ORACLE_HOME=${ORACLE_BASE}/product/12.2.0.1/dbhome_200114_1
+export ORACLE_HOME=${ORACLE_BASE}/product/12.2.0.1/db_2341
 
 # Add the ORACLE_HOME binaries to the PATH
 export PATH=$PATH:${ORACLE_HOME}/bin

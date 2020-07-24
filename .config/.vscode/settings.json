@@ -8,7 +8,7 @@
     "python.linting.pylintEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
-    "python.testing.pytestEnabled": true,
+    "python.testing.pytestEnabled": false,
     "python.testing.pytestArgs": [
         "tests",
     ],
@@ -23,4 +23,5 @@
     "terminal.integrated.shellArgs.linux": [
 		"-l",
     ],
+    "python.testing.promptToConfigure": false,
 }
