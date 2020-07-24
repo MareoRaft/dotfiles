@@ -68,6 +68,9 @@ export PERL5LIB
 # Python path
 # put it in .profile_local
 
+# Flutter path
+# put it in .profile_local
+
 # Mizar path
 export MIZFILES=/usr/local/share/mizar
 
