@@ -15,5 +15,8 @@
 	ui = auto
 # import the computer's local global gitconfig file, which can override settings for the particular computer
 [include]
-  path = ~/.gitconfig_local
-
+	path = ~/.gitconfig_local
+# For example, use `git unstage` instead of `git reset HEAD --`
+[alias]
+	unstage = reset HEAD --
+	visual = !gitk
