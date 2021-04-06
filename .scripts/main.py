@@ -14,12 +14,12 @@ import importlib
 import utils
 
 # establish some paths
-PATH_REPO = path.dirname(path.dirname(path.abspath(__file__)))
-PATH = {
-	'home': path.expanduser('~'),
-	'repo': PATH_REPO,
-	'add-host': path.join(PATH_REPO, '.scripts', 'add-host.sh'),
-}
+PATH = dict()
+PATH['repo'] = path.dirname(path.dirname(path.abspath(__file__)))
+PATH['home'] = path.expanduser('~')
+PATH['add-host'] = path.join(PATH['repo'], '.scripts', 'add-host.sh')
+PATH['hosts'] = path.join(PATH['home'], 'hosts')
+PATH['ssh-config'] = path.join(PATH['home'], '.ssh', 'config')
 
 def install_repo():
 	# move .git into home folder
@@ -47,6 +47,25 @@ def install_hosts():
 			ip_address = host_entry.address
 			host_name = host_entry.names[0]
 			utils.run(['sh', PATH['add-host'], ip_address, host_name])
+
+def configure_and_install_host(name, ip_address):
+	''' Add host to `hosts` file and to `.ssh/config` file, then run `install_hosts`. '''
+	# error check
+	usage_example = 'usage example: python3 install.py host {hostname} {ipaddress}'
+	if not name:
+		raise ValueError(f'hostname missing... {usage_example}')
+	if not ip_address:
+		raise ValueError(f'ip address missing... {usage_example}')
+	# add to hosts file
+	host_string = f'\n# Added by my dotfiles convenience script. Feel free to reorganize.\n{ip_address}\t{name}\n'
+	with open(PATH['hosts'], 'a') as f:
+		f.write(host_string)
+	# add to ~/.ssh/config
+	host_string = f'\nHOST {name}\n\tHostName {name}\n\tUser root\n\tIdentityFile ~/.ssh/id_ed25519\n'
+	with open(PATH['ssh-config'], 'a') as f:
+		f.write(host_string)
+	# run `install_hosts` in order to add to /etc/hosts too
+	install_hosts()
 
 if __name__ == '__main__':
 	print('do not run this file directly.  run install.py instead.')
