@@ -1,5 +1,8 @@
 [push]
 	default = simple
+# I am experimenting with this. (June 29, 2021) Supposedly it can be more convenient. But time will tell if it causes issues or not.
+[pull]
+	rebase = true
 # Force SSH to be used instead of HTTPS
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
@@ -13,10 +16,10 @@
 # Attempt to colorize output
 [color]
 	ui = auto
-# import the computer's local global gitconfig file, which can override settings for the particular computer
-[include]
-	path = ~/.gitconfig_local
 # For example, use `git unstage` instead of `git reset HEAD --`
 [alias]
 	unstage = reset HEAD --
 	visual = !gitk
+# import the computer's local global gitconfig file, which can override settings for the particular computer
+[include]
+	path = ~/.gitconfig_local
