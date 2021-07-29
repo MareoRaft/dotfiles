@@ -99,6 +99,7 @@ list-oracle-instances() {
 alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22.2016" && python3 main.py "~/Google Drive/KnewWaves/content"'
 alias dunnet='emacs -batch -l dunnet'
 alias my.test='py.test -x -s -vv'
+alias k8s='kubectl'
 alias kw.test='cd ~/programming/knewwaves/python/test && ./pytest-ordered.sh'
 alias poda='perl /Users/Matthew/Dropbox/mm/poda.pl'
 alias pwd='\pwd | sed -E s#/+#/#g'

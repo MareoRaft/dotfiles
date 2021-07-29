@@ -1,4 +1,5 @@
 [user]
-  name = First Last
-  email = e@mail.com
-
+	name = First Last
+	email = e@mail.com
+[init]
+	defaultBranch = master

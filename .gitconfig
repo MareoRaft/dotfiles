@@ -20,6 +20,8 @@
 [alias]
 	unstage = reset HEAD --
 	visual = !gitk
+[init]
+	defaultBranch = master
 # import the computer's local global gitconfig file, which can override settings for the particular computer
 [include]
 	path = ~/.gitconfig_local
