@@ -34,6 +34,7 @@ export DOCKERID="mvlancellotti"
 export REACT_APP_ENV=TEST
 
 
+
 # PATHS
 
 # let's add some places to PATH:
@@ -89,10 +90,15 @@ export NVM_DIR="$HOME/.nvm"
 # Set the ORACLE_BASE, ORACLE_HOME, and add Oracle binaries to the PATH
 # put it in .profile_local
 
+
+
+# FUNCTIONS
+
 # Define an oracle function to see which oracle instances are running
 list-oracle-instances() {
     /bin/ps -ef | grep ora_lgw[r] | awk '{print $8}' | sed -e 's/ora_lg[w]r_//'
 }
+
 
 
 # ALIASES

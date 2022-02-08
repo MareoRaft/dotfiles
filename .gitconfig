@@ -18,12 +18,17 @@
 	ui = auto
 # For example, use `git unstage` instead of `git reset HEAD --`
 [alias]
+	defaultbranch = !(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') 2>/dev/null
 	unstage = reset HEAD --
 	visual = !gitk
-	newb = !git checkout main && git pull origin main && git checkout -b
+	newb = !git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout -b
 	pushh = push origin HEAD
+	# testing to see if i can make aliases of aliases, and things like that...
+	test = pushh
+	test1 = pushh
+	test2 = !git pushh
 [init]
-	defaultBranch = master
+	defaultBranch = main
 # experimenting with this. this should cause git pull to automatically pull submodules also, but it DOES NOT do so for git clone nor for git checkout.i
 # so you must manually run:
 # git submodule update --init --recursive
