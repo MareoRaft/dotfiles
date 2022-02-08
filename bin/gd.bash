@@ -1,25 +1,25 @@
-# Version 1.1
+# Version 1.2
+# Usage:
+# gd dirname
+# Note:
+# 'gd' is short for 'go to directory' and is analagous to 'change directory'.  We no longer use 'go' because of Google's 'go' language and command.
 
-# state the desired paths that go will search in. The default depth to search in each path is 4, but this may be changed in find_go()
+# state the desired paths that gd will search in. The default depth to search in each path is 4, but this may be changed in find_gd()
 # input each path on a separate line
-GOPATH="$HOME
+GDPATH="$HOME
 $HOME/Dropbox
 /
 ."
 
 # given path and dir, run find. if nonempty, take the first entry, cd, pwd, exit
-find_go() {
+find_gd() {
     DEPTH=4
     SPATH="$1"
-    echo $SPATH
-    DIR="$2"; echo 'hi'; shift
-    echo 'DIR is: $DIR'
+    DIR="$2"; shift
     until [ -z "$2" ] # concatenate args with a space
     do
         DIR="$DIR $2"; shift
     done
-    echo 'DIR is: '
-    echo $DIR
     FINDS=$(find "$SPATH" -maxdepth $DEPTH -name "$DIR" 2>/dev/null)
     IFS=$'\n' # interpolation necessary b/c '' will make \ and n field separators.
     for FIND in $FINDS # although this is a loop, the goal is to take the first entry if there is one
@@ -34,13 +34,13 @@ find_go() {
     return 1 # failure. we didn't find it in this path.
 }
 
-go() {
+gd() {
 	INPATH="$1"
-    for SPATH in $GOPATH # foreach path, go to the inputted directory if possible
+    for SPATH in $GDPATH # foreach path, go to the inputted directory if possible
     do
-        find_go "$SPATH" $@ && return # if we successfully went to the directory, exit the program
+        find_gd "$SPATH" $@ && return # if we successfully went to the directory, exit the program
     done
 	# if we haven't returned yet, nothing was found.  let's cd incase this should have been a cd command (absolute path input)
-	cd "$INPATH" 2>/dev/null || echo 'You cannot go there.'
+	cd "$INPATH" 2>/dev/null || echo 'You cannot go to that dir.'
 	pwd
 }

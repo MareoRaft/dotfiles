@@ -20,8 +20,15 @@
 [alias]
 	unstage = reset HEAD --
 	visual = !gitk
+	newb = !git checkout main && git pull origin main && git checkout -b
+	pushh = push origin HEAD
 [init]
 	defaultBranch = master
+# experimenting with this. this should cause git pull to automatically pull submodules also, but it DOES NOT do so for git clone nor for git checkout.i
+# so you must manually run:
+# git submodule update --init --recursive
+[submodule]
+	recurse = true
 # import the computer's local global gitconfig file, which can override settings for the particular computer
 [include]
 	path = ~/.gitconfig_local
