@@ -18,11 +18,13 @@
 	ui = auto
 # For example, use `git unstage` instead of `git reset HEAD --`
 [alias]
+	currentbranch = !(git branch --show-current) 2>/dev/null
 	defaultbranch = !(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') 2>/dev/null
 	unstage = reset HEAD --
 	visual = !gitk
 	newb = !git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout -b
 	pushh = push origin HEAD
+	pulll = !git pull origin $(git currentbranch)
 	# testing to see if i can make aliases of aliases, and things like that...
 	test = pushh
 	test1 = pushh
