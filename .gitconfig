@@ -22,6 +22,7 @@
 	defaultbranch = !(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') 2>/dev/null
 	unstage = reset HEAD --
 	visual = !gitk
+	visual2 = !git log --graph --oneline --decorate --all branch-name~1..
 	newb = !git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout -b
 	pushh = push origin HEAD
 	pulll = !git pull origin $(git currentbranch)
