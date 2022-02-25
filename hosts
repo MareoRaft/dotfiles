@@ -13,6 +13,8 @@ fe80::1%lo0     localhost
 67.205.183.87	blackberry
 45.55.107.156	fuji
 162.243.168.182	clementine
+# i forget what date is doing. i think it's a Digital Ocean host
+134.209.117.113	date
 
 # Girihlet hosts
 45.55.123.80	salal
@@ -36,4 +38,5 @@ fe80::1%lo0     localhost
 # To allow the same kube context to work on the host and the container:
 127.0.0.1 kubernetes.docker.internal
 # End of section
+
 
