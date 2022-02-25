@@ -16,6 +16,10 @@ fi
 
 # common bashrc things shared across computers
 
+# set the prompt
+## we are using starship (see https://starship.rs/)
+eval "$(starship init bash)"
+
 # load nvm bash completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
@@ -25,4 +29,5 @@ BASH_RC_LOCAL_PATH="${HOME}/.bashrc_local"
 if [ -f "${BASH_RC_LOCAL_PATH}" ]; then
     . "${BASH_RC_LOCAL_PATH}"
 fi
+
 

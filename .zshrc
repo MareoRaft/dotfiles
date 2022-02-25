@@ -6,6 +6,7 @@ if [ -f "${RC_PATH}" ]; then
     emulate zsh
 fi
 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -107,9 +108,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
+# custom settings
+
+# set the prompt
+## we are using starship (see https://starship.rs/)
+eval "$(starship init zsh)"
+
+
+
 # if computer has it's own local zshrc, run that now
 ZSH_RC_LOCAL_PATH="${HOME}/.zshrc_local"
 if [ -f "${ZSH_RC_LOCAL_PATH}" ]; then
     . "${ZSH_RC_LOCAL_PATH}"
 fi
+
+
 

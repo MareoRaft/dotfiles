@@ -3,8 +3,7 @@ if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
 
-# see notes for PS1 options
-PS1="\@ \[\033[35m\]\w\[\033[0m\] \$ "
+
 
 #colorize the Terminal
 export GREP_OPTIONS='--color=auto'

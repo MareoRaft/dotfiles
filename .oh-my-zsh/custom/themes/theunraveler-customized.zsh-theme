@@ -1,6 +1,6 @@
 # Comment
 
-PROMPT='%{$reset_color%}[%{$fg[magenta]%}%~%{$reset_color%}] %{$fg[yellow]%}%% %{$reset_color%}'
+PROMPT='%{$reset_color%}[%{$fg[cyan]%}%~%{$reset_color%}] %{$fg[yellow]%}%% %{$reset_color%}'
 
 RPROMPT='%t %{$fg[yellow]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
 
