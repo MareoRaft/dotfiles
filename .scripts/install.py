@@ -39,8 +39,8 @@ def install_safe(args):
 	elif to_install == 'hosts':
 		main.install_hosts()
 	elif to_install == 'host':
-		host_name = args.host_name[0]
-		ip_address = args.ip_address[0]
+		host_name = args.host_name
+		ip_address = args.ip_address
 		main.configure_and_install_host(host_name, ip_address)
 	else:
 		print('You must run `./install.py repo` to install the repo for the first time, or `./install.py hosts` to update your hosts file, or `./install.py host hostname ipaddress` to add a host.  Aborting.')
@@ -49,8 +49,8 @@ def get_args():
 	# setup the arg parsing for the python script
 	parser = argparse.ArgumentParser(description='install dotfiles.')
 	parser.add_argument('install_type', metavar='what_to_install', type=str, nargs=1, help='what you want to install')
-	parser.add_argument('host_name', metavar='[hostname]', type=str, nargs='?', default=[''], help='name of host')
-	parser.add_argument('ip_address', metavar='[ip_address]', type=str, nargs='?', default=[''], help='ip address of host')
+	parser.add_argument('host_name', metavar='[hostname]', type=str, nargs='?', default='', help='name of host')
+	parser.add_argument('ip_address', metavar='[ip_address]', type=str, nargs='?', default='', help='ip address of host')
 	return parser.parse_args()
 
 if __name__ == '__main__':
