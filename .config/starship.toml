@@ -1,0 +1,114 @@
+# starship configuration option documentation is here:
+# https://starship.rs/config
+
+# Inserts a blank line between shell prompts
+add_newline = false
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$container\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$line_break\
+$status\
+$shell\
+$character"""
+
+
+
+# print working directory
+[directory]
+truncation_length = 10
+truncate_to_repo = false
+# read_only = " 📕"
+read_only = " (read-only)"
+read_only_style = "bold red"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# git branch
+[git_branch]
+style = "bold yellow"
+format = "on [$branch]($style) "
+truncation_length = 80
+
+# time
+[time]
+disabled = false
+style = "default"
+
+# show an indicator for currently used shell
+[shell]
+disabled = false
+bash_indicator = "bash"
+# bash_indicator = "\\$"
+# zsh_indicator = "%%"
+# style = "bold yellow"
+
+# the single character at the end of the prompt right before you type
+[character]
+disabled = false
+success_symbol = "[❯](bold yellow)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
