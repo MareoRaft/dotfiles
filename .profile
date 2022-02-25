@@ -52,6 +52,7 @@ PATH=$PATH:/opt/X11/bin
 PATH=$PATH:~/node_modules
 PATH=$PATH:~/npm-global/bin
 PATH=$PATH:~/.npm-global/bin
+PATH=$PATH:~/go/bin
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/bin
 export PATH
