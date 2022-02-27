@@ -10,7 +10,8 @@ export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1;
 
 # try to enable 'go' program
-source ~/bin/go.bash
+## now disabled do to `go` command being used for golang
+# source ~/bin/go.bash
 
 # if computer has it's own specific bash_profile, run that now
 BASH_PROFILE_LOCAL_PATH="${HOME}/.bash_profile_local"
