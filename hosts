@@ -11,7 +11,9 @@ fe80::1%lo0     localhost
 
 # Personal hosts
 67.205.183.87	blackberry
+# learnnation.org points to fuji (FreeBSD). fuji serves static files for learnnation.org. fuji serves groceries.
 45.55.107.156	fuji
+# clementine (Cent-OS) hosts almost all of my projects, each one in a docker container.
 162.243.168.182	clementine
 # i forget what date is doing. i think it's a Digital Ocean host
 134.209.117.113	date
