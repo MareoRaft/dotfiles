@@ -19,7 +19,11 @@
 # For example, use `git unstage` instead of `git reset HEAD --`
 [alias]
 	currentbranch = !(git branch --show-current) 2>/dev/null
+	currentb = !git currentbranch
 	defaultbranch = !(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') 2>/dev/null
+	defaultb = !git defaultbranch
+	mainbranch = !git defaultbranch
+	mainb = !git defaultbranch
 	unstage = reset HEAD --
 	visual = !gitk
 	visual2 = !git log --graph --oneline --decorate --all branch-name~1..
