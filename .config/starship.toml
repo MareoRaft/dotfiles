@@ -2,8 +2,10 @@
 # https://starship.rs/config
 
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
+
 format = """
+\n
 $username\
 $hostname\
 $localip\
