@@ -30,6 +30,7 @@
 	newb = !git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout -b
 	pushh = push origin HEAD
 	pulll = !git pull origin $(git currentbranch)
+	mergee = !topic_branch=$(git currentbranch) && git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout $topic_branch && git merge $(git defaultbranch)
 	# testing to see if i can make aliases of aliases, and things like that...
 	test = pushh
 	test1 = pushh
