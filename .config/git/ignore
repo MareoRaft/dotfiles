@@ -1,4 +1,4 @@
-# This is a global gitignore. All repos on this computer will obey this gitignore in addition to the repo-level .gitignore. There is a setting in the git config that points to this file.
+# This is a global gitignore. All repos on this computer will obey this gitignore in addition to the repo-level .gitignore. There is a setting in the ~/.gitconfig that points to this file, and if missing it defaults to ~/.config/git/ignore
 
 ### macOS ###
 # General
@@ -33,4 +33,3 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-hep
