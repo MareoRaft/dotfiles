@@ -31,7 +31,14 @@
 	pushh = push origin HEAD
 	pulll = !git pull origin $(git currentbranch)
 	mergee = !topic_branch=$(git currentbranch) && git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout $topic_branch && git merge $(git defaultbranch)
+	checkoutt = "!f() { \
+		git fetch origin \"$1\"; \
+		git checkout \"$1\"; \
+	}; f"
 	# testing to see if i can make aliases of aliases, and things like that...
+	testf = "!f() { \
+		echo 'ran testf'; \
+	}; f"
 	test = pushh
 	test1 = pushh
 	test2 = !git pushh
