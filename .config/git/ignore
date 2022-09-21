@@ -1,5 +1,7 @@
 # This is a global gitignore. All repos on this computer will obey this gitignore in addition to the repo-level .gitignore. There is a setting in the ~/.gitconfig that points to this file, and if missing it defaults to ~/.config/git/ignore
 
+
+
 ### macOS ###
 # General
 .DS_Store
@@ -29,7 +31,29 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 
