@@ -35,11 +35,13 @@
 		git fetch origin \"$1\"; \
 		git checkout \"$1\"; \
 	}; f"
+	d = !git diff && git status
+	aa = !git add --all && git status
+	c = commit
 	# testing to see if i can make aliases of aliases, and things like that...
 	testf = "!f() { \
 		echo 'ran testf'; \
 	}; f"
-	test = pushh
 	test1 = pushh
 	test2 = !git pushh
 [init]
