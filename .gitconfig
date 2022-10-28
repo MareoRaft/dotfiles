@@ -38,6 +38,7 @@
 	d = !git diff && git status
 	aa = !git add --all && git status
 	c = commit
+	s = status
 	# testing to see if i can make aliases of aliases, and things like that...
 	testf = "!f() { \
 		echo 'ran testf'; \
