@@ -2,10 +2,10 @@
 # https://starship.rs/config
 
 # Inserts a blank line between shell prompts
-add_newline = true
+# Note that you can ALSO add newlines by inserting an ACTUAL newline (no backslash) into the `format` string below or by literally typing '\n' into the `format` string below.
+add_newline = false
 
-format = """
-\n
+format = """\n
 $username\
 $hostname\
 $localip\
