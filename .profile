@@ -29,10 +29,6 @@ export LC_CTYPE="en_US.UTF-8"
 # remember your docker id for use with docker
 export DOCKERID="mvlancellotti"
 
-# things for BNY
-## for IRIS dev environment
-export REACT_APP_ENV=TEST
-
 
 
 # PATHS
@@ -73,9 +69,6 @@ export PERL5LIB
 # Flutter path
 # put it in .profile_local
 
-# Mizar path
-export MIZFILES=/usr/local/share/mizar
-
 # Java path
 # put it in .profile_local
 
@@ -107,7 +100,6 @@ alias beadshorper='cd ~ && cd "Google Drive/KnewWaves/code/old/beadshorper.Mar22
 alias dunnet='emacs -batch -l dunnet'
 alias my.test='py.test -x -s -vv'
 alias k8s='kubectl'
-alias kw.test='cd ~/programming/knewwaves/python/test && ./pytest-ordered.sh'
 alias poda='perl /Users/Matthew/Dropbox/mm/poda.pl'
 alias pwd='\pwd | sed -E s#/+#/#g'
 alias r='radian'
@@ -116,11 +108,9 @@ alias stroke='/System/Library/CoreServices/Applications/Network\ Utility.app/Con
 alias sublimetext='subl'
 alias sublimemerge='smerge'
 alias ssh-X='ssh -X -C -c blowfish' # convenient ssh for x11
-alias belenv='source /Users/Matthew/programming/belacam/belacamenv/bin/activate'
 alias elf='electron-forge'
 alias gnch='ganache-cli'
 alias ganache-app='open -a "Ganache"'
-alias jenkins='java -jar ~/HUBCITYMEDIA-repo/jenkins-cli.jar -s http://10.0.51.117:3000/'
 alias engine='/Users/adc2btx/bin/cli-darwin-amd64-18.8.3.bin'
 alias sms='/Users/adc2btx/bin/discovery-sms-cli-macos-amd64-1.0.2.bin'
 
@@ -129,3 +119,4 @@ alias sms='/Users/adc2btx/bin/discovery-sms-cli-macos-amd64-1.0.2.bin'
 if [ -f "${HOME}/.profile_local" ]; then
 	. "${HOME}/.profile_local"
 fi
+
