@@ -57,3 +57,6 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Ignore tests/__init__.py file in repos (this is just for K gp repos and should be removed in the future)
+tests/__init__.py
+
