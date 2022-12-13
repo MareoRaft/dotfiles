@@ -35,7 +35,14 @@
 		git fetch origin \"$1\"; \
 		git checkout \"$1\"; \
 	}; f"
-	d = !git diff && git status
+	d = "!f() { \
+		git diff \"$@\"; \
+		git status; \
+	}; f"
+	a = "!f() { \
+		git add \"$@\"; \
+		git status; \
+	}; f"
 	aa = !git add --all && git status
 	c = commit
 	s = status
