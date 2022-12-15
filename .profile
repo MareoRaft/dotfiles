@@ -18,7 +18,7 @@ eval "$(ssh-agent -s)"
 # ENVIRONMENT VARIABLES
 
 # default editor
-export EDITOR="vim"
+export EDITOR="emacs"
 
 # set the LANG to follow UTF-8, and other locale settings
 export LANG="en_US.UTF-8"
