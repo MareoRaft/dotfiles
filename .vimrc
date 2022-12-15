@@ -1,3 +1,12 @@
+" vim-plug
+" ---
+" vim-plug is a plugin manager for vim. The following code block shows which plugins to install.
+" Read the example in https://github.com/junegunn/vim-plug before changing the below.
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+call plug#end()
+
+
 "au BufRead,BufNewFile * start "this makes INSERT mode enabled when vim opens
 
 set number "this shows line numbers on left
