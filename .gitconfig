@@ -31,6 +31,7 @@
 	pushh = push origin HEAD
 	pulll = !git pull origin $(git currentbranch)
 	mergee = !topic_branch=$(git currentbranch) && git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout $topic_branch && git merge $(git defaultbranch)
+	checkoutmainb = !git checkout $(git defaultbranch)
 	checkoutt = "!f() { \
 		git fetch origin \"$1\"; \
 		git checkout \"$1\"; \
