@@ -1,4 +1,4 @@
-;; Wrapper to enable evil mode.
+;; Wrapper to enable/disable evil mode.
 ;;
 ;; It adds MELPA to the registry list if no already there, downloads and installs evil if not already there, and enables evil.
 
@@ -15,4 +15,4 @@
 
 ;; Enable Evil
 (require 'evil)
-(evil-mode 1)
+(evil-mode -1)
