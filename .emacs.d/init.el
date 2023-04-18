@@ -10,37 +10,28 @@
 
 
 
-;; ezf -- a tool for fuzzy file searching
-;; https://www.masteringemacs.org/article/fuzzy-finding-emacs-instead-of-fzf
-;; the script would error for me with "*ERROR*: Symbol’s function definition is void: ezf" so I removed it. Not the droids I were looking for anyway.
-
-;; make C-x C-f pull up project-find-file instead of find-file
-;;(project-find-file C-f)
-;; So it turns out I can do C-x p f to pull up project-find-file
-;; works!:
-;;(global-unset-key (kbd "C-x C-f"))
-;;(global-set-key (kbd "C-x C-f") 'project-find-file)
-;; alternative approach
-(define-key (current-global-map) [remap find-file] 'project-find-file)
 
 
 
-;; Evil stuff...
+(defun load-directory (directory)
+  "Load recursively all `.el' files in DIRECTORY."
+  (dolist (element (directory-files-and-attributes directory nil nil nil))
+    (let* ((path (car element))
+           (fullpath (concat directory "/" path))
+           (isdir (car (cdr element)))
+           (ignore-dir (or (string= path ".") (string= path ".."))))
+      (cond
+       ((and (eq isdir t) (not ignore-dir))
+        (load-directory fullpath))
+       ((and (eq isdir nil) (string= (substring path -3) ".el"))
+        (load (file-name-sans-extension fullpath)))))))
+;; load all init files in config/ dir
+(load-directory "~/.emacs.d/config")
 
-;; Set up package.el to work with MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -54,6 +45,10 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+
 ;; Enable Unmodified Buffer
 (require 'unmodified-buffer)
 (add-hook 'after-init-hook 'unmodified-buffer-global-mode)
+
+
