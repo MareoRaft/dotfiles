@@ -3,13 +3,6 @@
 
 
 
-<<<<<<< HEAD
-=======
-;; ezf -- a tool for fuzzy file searching
-;; https://www.masteringemacs.org/article/fuzzy-finding-emacs-instead-of-fzf
-;; the script would error for me with "*ERROR*: Symbol’s function definition is void: ezf" so I removed it. Not the droids I were looking for anyway.
-
->>>>>>> d1ad280 (disable evil. remove comments. remove keycut project-find-file.)
 
 
 
