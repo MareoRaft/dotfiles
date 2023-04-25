@@ -1,3 +1,12 @@
+;; Set up package.el to work with MELPA, initialize package system
+;; This is needed for evil, unmodified-buffer, and in the future other third party packages. I put it here because it should only run once, not once per package.
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
+
+
 
 
 ;; Delete trailing whitespace on-save
