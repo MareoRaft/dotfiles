@@ -1,9 +1,7 @@
-;; Actually, I think what I was read was wrong. I don't know if it's folder specific.
-(desktop-save-mode -1) ;; i put -1 so now it's off.  but i can just as easily comment it out, since it is off by default
+
 
 ;; Delete trailing whitespace on-save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 
 
 
@@ -40,9 +38,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-
-
-;; Enable Unmodified Buffer
-(require 'unmodified-buffer)
-(add-hook 'after-init-hook 'unmodified-buffer-global-mode)
