@@ -1,3 +1,8 @@
+;; Use the gnutls package, and prepend a cert to the trust list
+;; This is needed because when emacs tries to access MELPA, we need it to trust the Zscaler cert.
+(require 'gnutls)
+(add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl@3/cert.pem")
+
 ;; Set up package.el to work with MELPA, initialize package system
 ;; This is needed for evil, unmodified-buffer, and in the future other third party packages. I put it here because it should only run once, not once per package.
 (require 'package)
