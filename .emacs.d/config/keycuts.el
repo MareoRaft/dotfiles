@@ -12,3 +12,7 @@
 ;; This is great except that I can't get it to work with 'meta (alt). It works great with shift, but then I can't use shift to select multiple lines of code.
 (windmove-default-keybindings 'meta)
 
+;; Set key for god mode
+;; doesn't work for ESC. Some program must be interfering with that key.)
+(global-set-key (kbd "C-g") #'god-mode-all)
+
