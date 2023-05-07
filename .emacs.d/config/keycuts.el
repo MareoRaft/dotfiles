@@ -14,5 +14,9 @@
 
 ;; Set key for god mode
 ;; doesn't work for ESC. Some program must be interfering with that key.)
-(global-set-key (kbd "C-g") #'god-mode-all)
+(global-set-key (kbd "C-d") #'god-mode-all)
 
+;; Switch window w/ C-o instead of (or in addition to) C-x o.
+(global-set-key (kbd "C-o") 'other-window)
+;; or Switch window w/ C-right, C-left
+(windmove-default-keybindings 'control)
