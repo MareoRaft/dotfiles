@@ -15,6 +15,9 @@
 ;; Set key for god mode
 ;; doesn't work for ESC. Some program must be interfering with that key.)
 (global-set-key (kbd "C-d") #'god-mode-all)
+;; Since god mode is activated through god-mode-all, make sure no buffers are skipped.
+(setq god-exempt-major-modes nil)
+(setq god-exempt-predicates nil)
 
 ;; Switch window w/ C-o instead of (or in addition to) C-x o.
 (global-set-key (kbd "C-o") 'other-window)
