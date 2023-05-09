@@ -27,7 +27,7 @@
      (indent-for-tab-command))))
 
 (global-set-key
- (kbd "S-TAB")
+ (kbd "<backtab>")
  (lambda (start end)
    (interactive "r")
    (if (use-region-p)
