@@ -1,5 +1,5 @@
 ;; When viewing a tab, it appears to be `tab-width` spaces wide.
-;;(setq-default tab-width 4)
+(setq-default tab-width 4)
 
 ;; In text mode...
 ;;(add-hook 'text-mode-hook
@@ -16,8 +16,10 @@
   :type 'integer)
 (make-variable-buffer-local 'tab-shift-width)
 
-(global-set-key
- (kbd "TAB")
+;;(require 'general)
+
+(general-def
+ "S-TAB"
  (lambda (start end)
    (interactive "r")
    (if (use-region-p)
@@ -25,6 +27,7 @@
      (let ((deactivate-mark nil))
        (indent-rigidly start end tab-shift-width)))
      (indent-for-tab-command))))
+
 
 (global-set-key
  (kbd "<backtab>")
