@@ -60,6 +60,8 @@
 # git submodule update --init --recursive
 [submodule]
 	recurse = true
+[advice]
+	addIgnoredFile = false
 # import the computer's local global gitconfig file, which can override settings for the particular computer
 [include]
 	path = ~/.gitconfig_local
