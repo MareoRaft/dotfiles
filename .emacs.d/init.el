@@ -1,3 +1,7 @@
+;; fix bug with use-package
+;; see: https://emacs.stackexchange.com/questions/69066/problem-loading-packages-with-emacs-28
+;(setq find-file-visit-truename nil)
+
 ;; Use the gnutls package, and prepend a cert to the trust list
 ;; This is needed because when emacs tries to access MELPA, we need it to trust the Zscaler cert.
 (require 'gnutls)
@@ -8,6 +12,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
+;(add-to-list 'package-archives
+;             '("gnu" . ""))
 (package-initialize)
 (package-refresh-contents)
 
@@ -38,16 +44,19 @@
 ;  :diminish counsel-mode
   (counsel-mode 1))
 
+;; xclip helps you to copy to clipboard when using terminal emacs
+(unless (package-installed-p 'xclip)
+  (package-install 'xclip))
+;; enable
+(eval-when-compile
+  (require 'xclip))
+(xclip-mode 1)
 
-;; git support
-(use-package magit)
 
 
 
 ;; Delete trailing whitespace on-save
 ;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
 
 
 
@@ -75,7 +84,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(counsel ivy unmodified-buffer evil)))
+ '(package-selected-packages '(xclip counsel ivy unmodified-buffer evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
