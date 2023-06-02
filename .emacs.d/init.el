@@ -11,6 +11,36 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; use-package is your BEST FRIEND and PACKAGE MANAGER
+;; Install use-package if you don't have it already
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+;; enable use-package
+(eval-when-compile
+  (require 'use-package))
+
+
+;; Ivy is a completion engine, and is needed for Counsel.
+(use-package ivy
+  :ensure t
+  :config
+;  :diminish ivy-mode
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d%d) ")
+  (setq ivy-use-selectable-prompt t))
+
+
+;; Counsel gives you regex-searchable suggested completions when you enter certain interactive prompts, such as M-x or C-x C-f.
+(use-package counsel
+  :ensure t
+  :config
+;  :diminish counsel-mode
+  (counsel-mode 1))
+
+
+;; git support
+(use-package magit)
 
 
 
@@ -45,7 +75,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(unmodified-buffer evil)))
+ '(package-selected-packages '(counsel ivy unmodified-buffer evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

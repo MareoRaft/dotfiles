@@ -27,3 +27,10 @@
 (global-set-key (kbd "C-o") 'other-window)
 ;; or Switch window w/ C-right, C-left
 (windmove-default-keybindings 'control)
+
+;; Manually run the init.el file
+(defun load-init ()
+  (interactive)
+  (load-file "~/.emacs.d/init.el"))
+
+(global-set-key (kbd "C-i") 'load-init)
