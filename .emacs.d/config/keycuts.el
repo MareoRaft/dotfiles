@@ -21,7 +21,7 @@
 
 ;; Close window/buffer w/ C-0 instead of (or in addition to) C-x 0.
 ;; NOT WORKING
-(global-set-key (kbd "C-0") 'delete-window)
+(global-set-key (kbd "C-p") 'delete-window)
 
 ;; Switch window w/ C-o instead of (or in addition to) C-x o.
 (global-set-key (kbd "C-o") 'other-window)
