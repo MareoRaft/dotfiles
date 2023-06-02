@@ -54,6 +54,17 @@
 
 
 
+;;; Set a nice color scheme / theme
+;(unless (package-installed-p 'solarized-theme)
+;  (package-install 'solarized-theme))
+;;; enable
+;(eval-when-compile
+;  (require 'solarized-theme))
+;(load-theme 'solarized-dark t)
+
+
+
+
 
 ;; Delete trailing whitespace on-save
 ;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -84,7 +95,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(xclip counsel ivy unmodified-buffer evil)))
+ '(package-selected-packages '(solarized-theme xclip counsel ivy unmodified-buffer evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
