@@ -28,9 +28,10 @@
 ;; or Switch window w/ C-right, C-left
 (windmove-default-keybindings 'control)
 
-;; Manually run the init.el file
+;; Manually run the init.el file.
 (defun load-init ()
   (interactive)
   (load-file "~/.emacs.d/init.el"))
+;; Don't use C-i because that's literally the tab character.
+(global-set-key (kbd "C-x i") 'load-init)
 
-(global-set-key (kbd "C-i") 'load-init)
