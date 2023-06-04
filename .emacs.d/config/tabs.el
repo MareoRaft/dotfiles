@@ -18,8 +18,8 @@
 
 ;;(require 'general)
 
-(general-def
- "S-TAB"
+(global-set-key
+ (kbd "<tab>")
  (lambda (start end)
    (interactive "r")
    (if (use-region-p)
