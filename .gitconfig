@@ -28,8 +28,8 @@
 	visual = !gitk
 	visual2 = !git log --graph --oneline --decorate --all branch-name~1..
 	newb = !git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout -b
-	pushh = push origin HEAD
 	pulll = !git pull origin $(git currentbranch)
+	pushh = !git pull origin $(git currentbranch) && git push origin HEAD
 	mergee = !topic_branch=$(git currentbranch) && git checkout $(git defaultbranch) && git pull origin $(git defaultbranch) && git checkout $topic_branch && git merge $(git defaultbranch)
 	checkoutmainb = !git checkout $(git defaultbranch)
 	checkoutt = "!f() { \
