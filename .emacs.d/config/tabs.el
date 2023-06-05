@@ -28,31 +28,33 @@
 ;; )
 
 
-;; (defcustom tab-shift-width 4
-;;   "Sets selected text shift width on tab"
-;;   :type 'integer)
-;; (make-variable-buffer-local 'tab-shift-width)
+(defcustom tab-shift-width 4
+  "Sets selected text shift width on tab"
+  :type 'integer)
+(make-variable-buffer-local 'tab-shift-width)
 
-;; ;;(require 'general)
 
-;; THIS DOES NOT WORK.  DELETE IT SOON.
-;; (global-set-key
-;;  (kbd "<tab>")
-;;  (lambda (start end)
-;;    (interactive "r")
-;;    (if (use-region-p)
-;;        (save-excursion
-;;      (let ((deactivate-mark nil))
-;;        (indent-rigidly start end tab-shift-width)))
-;;      (indent-for-tab-command))))
+;; WORKS
+(global-set-key
+  ;; C-i is the keycode for the tab key in emacs.
+  (kbd "C-i")
+  (lambda (start end)
+    (interactive "r")
+    (if (use-region-p)
+        (save-excursion
+      (let ((deactivate-mark nil))
+        (indent-rigidly start end tab-shift-width)))
+      (indent-for-tab-command))))
+
 
 ;; THIS WORKS. LEAVE IT BE unless you find a tool that replaces both this and <tab> in one go.
 (global-set-key
- (kbd "<backtab>")
- (lambda (start end)
-   (interactive "r")
-   (if (use-region-p)
-       (save-excursion
-     (let ((deactivate-mark nil))
-       (indent-rigidly start end (- 4))))
-     (indent-for-tab-command))))
+  ;; <backtab> is the code for shift-tab in the terminal version of emacs. S-TAB may work for GUI emacs.
+  (kbd "<backtab>")
+  (lambda (start end)
+    (interactive "r")
+    (if (use-region-p)
+        (save-excursion
+      (let ((deactivate-mark nil))
+        (indent-rigidly start end (- tab-shift-width))))
+      (indent-for-tab-command))))

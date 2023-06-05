@@ -15,9 +15,9 @@
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)))
 
-;; make command-/ comment code
+;; make command-/ comment code, and use C-; as a backup.
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
-
+(global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 
 
 ;; make C-x C-f pull up project-find-file instead of find-file
