@@ -1,9 +1,10 @@
 ;; When viewing a tab, it appears to be `tab-width` spaces wide.
 (setq-default tab-width 4)
 
+;; ;; TEMP DISABLE THIS so we can try out GUESS STYLE, which is a more complete solution, even though this WORKS
 ;; Use spaces instead of tabs.
 ;; (if user asks to indent to position 7, for example, do not insert a tab followed by 3 spaces, but rather insert all spaces)
-(setq-default indent-tabs-mode nil)
+;; (setq-default indent-tabs-mode nil)
 
 ;; ;; TEMP DISABLE THIS so we can try out GUESS STYLE, which is a more complete solution, even though this WORKS
 ;; (defun infer-indentation-style ()
@@ -45,14 +46,13 @@
 ;;        (indent-rigidly start end tab-shift-width)))
 ;;      (indent-for-tab-command))))
 
-;; ;; TEMP DISABLE THIS so we can try out GUESS STYLE, which is a more complete solution, even though this WORKS
-;; ;; THIS WORKS. LEAVE IT BE unless you find a tool that replaces both this and <tab> in one go.
-;; (global-set-key
-;;  (kbd "<backtab>")
-;;  (lambda (start end)
-;;    (interactive "r")
-;;    (if (use-region-p)
-;;        (save-excursion
-;;      (let ((deactivate-mark nil))
-;;        (indent-rigidly start end (- 4))))
-;;      (indent-for-tab-command))))
+;; THIS WORKS. LEAVE IT BE unless you find a tool that replaces both this and <tab> in one go.
+(global-set-key
+ (kbd "<backtab>")
+ (lambda (start end)
+   (interactive "r")
+   (if (use-region-p)
+       (save-excursion
+     (let ((deactivate-mark nil))
+       (indent-rigidly start end (- 4))))
+     (indent-for-tab-command))))
