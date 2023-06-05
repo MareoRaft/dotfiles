@@ -1,3 +1,25 @@
+;; key bindings
+;(when (eq system-type 'darwin) ;; Mac-specific settings
+;; none of the below two lines appear to work
+  (setq mac-command-modifier 'alt) ;; Set left Mac command key to map to the emacs "super" modifier key, which is then denoted by "s-" in keyboard shortcuts.
+  (setq mac-right-command-modifier 'alt)
+;)
+
+;; more modern-text-editor-standard behavior of commenting/uncommenting code
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)))
+
+;; make command-/ comment code
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
+
+
+
 ;; make C-x C-f pull up project-find-file instead of find-file
 ;;(project-find-file C-f)
 ;; So it turns out I can do C-x p f to pull up project-find-file
