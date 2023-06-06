@@ -25,9 +25,10 @@
 ;; So it turns out I can do C-x p f to pull up project-find-file
 ;; works!:
 ;;(global-unset-key (kbd "C-x C-f"))
-;;(global-set-key (kbd "C-x C-f") 'project-find-file)
 ;; alternative approach
 (define-key (current-global-map) [remap find-file] 'project-find-file)
+(global-set-key (kbd "C-x C-f") 'project-find-file) ; above wasn't working on work laptop so now try this ... works!
+
 
 ;; (global-set-key (kbd "M-<left>")  'windmove-left) this code is commented it out. we can delete it soon
 
