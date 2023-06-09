@@ -5,6 +5,10 @@
   (setq mac-right-command-modifier 'alt)
 ;)
 
+;; Reload the file contents (useful if the file has changed on disk and you want to refresh buffer to show those changes).
+;; See https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer
+(global-set-key (kbd "C-r") 'revert-buffer-quick)
+
 ;; more modern-text-editor-standard behavior of commenting/uncommenting code
 (defun comment-or-uncomment-region-or-line ()
     "Comments or uncomments the region or the current line if there's no active region."
