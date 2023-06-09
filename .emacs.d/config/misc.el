@@ -1,3 +1,9 @@
+;; Always display line numbers.
+;;
+;; see: https://emacs.stackexchange.com/questions/278/how-do-i-display-line-numbers-in-emacs-not-in-the-mode-line
+;; note: In the future, it may be better to not use the global mode but rather enable line numbers in different modes individually, since you may not actually want it in every single mode. Anyway, let's see how this looks.
+(global-display-line-numbers-mode)
+
 ;; Ivy is a completion engine, and is needed for Counsel.
 (use-package ivy
   :ensure t
