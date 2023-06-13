@@ -1,8 +1,9 @@
 [push]
 	default = simple
-# I am experimenting with this. (June 29, 2021) Supposedly it can be more convenient. But time will tell if it causes issues or not.
+# I am experimenting with this. (June 29, 2021 -> set rebase = true) Supposedly it can be more convenient. But time will tell if it causes issues or not.
+# Now trying the other way. (June 13, 2023 -> set rebase = false) I occasionally have an issue in the datamart repo where when I try to merge in the latest updates from master and there is a merge conflict, it balloons out of control: I have to fix the merge conflict 3 times instead of once, and then a bunch of files that were not actually part of the MR show up in the diff when I post the MR. Then I have to start a brand new branch and copy my changes over to it.
 [pull]
-	rebase = true
+	rebase = false
 # Force SSH to be used instead of HTTPS
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
