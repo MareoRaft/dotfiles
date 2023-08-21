@@ -1,3 +1,8 @@
+;; Make line-wrapping on by default in org-mode. (Turn OFF truncate lines in org-mode)
+;;
+;; Longer story: truncate-lines is off (nil) normally, but in org-mode by default it is on, so we override the default to off here, since I think I prefer line wrapping.
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 ;; Show full file path in mode line
 (setq-default mode-line-buffer-identification
               (list 'buffer-file-name
