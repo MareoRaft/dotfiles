@@ -63,6 +63,8 @@
 	recurse = true
 [advice]
 	addIgnoredFile = false
+[core]
+	editor = vim
 # import the computer's local global gitconfig file, which can override settings for the particular computer
 [include]
 	path = ~/.gitconfig_local
